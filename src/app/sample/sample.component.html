@@ -21,6 +21,15 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="example">
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
+
+
+
+      <mat-form-field appearance="outline" class="example">
         <mat-label>Select Blood Group</mat-label>
         <mat-select formControlName="blood" required>
           <mat-option *ngFor="let group1 of group" [value]="group1.blood">

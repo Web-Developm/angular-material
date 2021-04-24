@@ -16,6 +16,7 @@ export class SampleComponent implements OnInit {
     blood: this.fb.control('', [Validators.required]),
     salary: this.fb.control('', [Validators.required]),
     age: this.fb.control('', [Validators.required]),
+    street:this.fb.control(''),
     date:this.fb.control('')
   })
 
