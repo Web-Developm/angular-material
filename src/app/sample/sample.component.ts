@@ -18,10 +18,11 @@ export class SampleComponent implements OnInit {
 
 
 
-  sample: string[] = ['id', 'name', 'location']
+  sample: string[] = ['id', 'user', 'name', 'email', 'password', 'cpassword', 'blood', 'salary', 'age', 'street'];
 
   data = this.fb.group({
     user: ['Fresher'],
+    id: ['', [Validators.required]],
     name: ['', [Validators.required, Validators.pattern('[a-zA-Z]*')]],
     email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
@@ -29,29 +30,33 @@ export class SampleComponent implements OnInit {
     blood: ['', [Validators.required]],
     salary: ['', [Validators.required]],
     age: ['', [Validators.required]],
-    street: ['', [Validators.required]],
-    date: this.fb.control('')
+    street: ['', [Validators.required]]
   })
 
-  public temp: Array<{ user: any; name: string; email: string; password: string, cpassword: string, blood: string, salary: string, age: number, street: string, date: string }> = [];
+  public temp: Array<{ id: number; user: any; name: string; email: string; password: string; cpassword: string; blood: string; salary: string; age: number; street: string }> = [];
 
-  add()
-  {
+  add() {
     this.temp.push({
-      user:this.data.controls['user'].value,
-      name:this.data.controls['name'].value,
-      email:this.data.controls['email'].value,
-      password:this.data.controls['password'].value,
-      cpassword:this.data.controls['cpassword'].value,
-      blood:this.data.controls['blood'].value,
-      salary:this.data.controls['salary'].value,
-      age:this.data.controls['age'].value,
-      street:this.data.controls['street'].value,
-      date:this.data.controls['date'].value
-    })
+      id: this.data.controls['id'].value,
+      user: this.data.controls['user'].value,
+      name: this.data.controls['name'].value,
+      email: this.data.controls['email'].value,
+      password: this.data.controls['password'].value,
+      cpassword: this.data.controls['cpassword'].value,
+      blood: this.data.controls['blood'].value,
+      salary: this.data.controls['salary'].value,
+      age: this.data.controls['age'].value,
+      street: this.data.controls['street'].value
+    });
+
+    alert("Successfully added");
+
+    console.log(this.temp);
 
     this.data.reset();
   }
+
+
   display() {
     console.log(this.data.value);
     this.data.reset();
