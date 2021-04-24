@@ -6,6 +6,13 @@
   <mat-card-content>
     <form class="example-form" [formGroup]="data">
 
+      <mat-radio-group aria-label="select on option" formControlName="user">
+        <mat-radio-button value="Fresher">Fresher</mat-radio-button>
+        <mat-radio-button value="Experience">Experience</mat-radio-button>
+        <br>
+      </mat-radio-group>
+
+
       <mat-form-field appearance="outline" class="example">
         <mat-label>Name</mat-label>
         <input matInput placeholder="name" formControlName="name" required>
@@ -61,8 +68,7 @@
 
 
 
-      <button (click)="display()" [disabled]="data.invalid" mat-flat-button color="primary"
-        >Submit</button>
+      <button (click)="display()" [disabled]="data.invalid" mat-flat-button color="primary">Submit</button>
 
     </form>
 

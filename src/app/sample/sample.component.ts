@@ -11,12 +11,13 @@ export class SampleComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   data = this.fb.group({
-    name: this.fb.control('', [Validators.required,Validators.pattern('[a-zA-Z]*')]),
-    email: this.fb.control('', [Validators.required, Validators.email]),
-    blood: this.fb.control('', [Validators.required]),
-    salary: this.fb.control('', [Validators.required]),
-    age: this.fb.control('', [Validators.required]),
-    street:this.fb.control(''),
+    user:['Fresher'],
+    name: ['', [Validators.required,Validators.pattern('[a-zA-Z]*')]],
+    email:['', [Validators.required, Validators.email]],
+    blood: ['', [Validators.required]],
+    salary: ['', [Validators.required]],
+    age: ['', [Validators.required]],
+    street:[''],
     date:this.fb.control('')
   })
 
