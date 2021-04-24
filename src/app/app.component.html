@@ -1,1 +1,31 @@
-<app-sample></app-sample>
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aira-label="example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span>MY App</span>
+
+  <a routerLink="/">
+    <button mat-icon-button color="accent" aria-label="Example icon button with a home icon">
+      <mat-icon>home</mat-icon>
+    </button></a>
+
+  <a routerLink="/sample">
+    <button mat-button color="white">Form</button>
+  </a>
+
+  <a routerLink="/data">
+    <button mat-button color="white">Data</button>
+  </a>
+
+  <a routerLink="/update">
+    <button mat-button color="white">Update</button>
+  </a>
+
+  <a routerLink="/delete">
+    <button mat-button color="white">Delete</button></a>
+
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>
