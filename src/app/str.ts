@@ -1,5 +1,6 @@
 export class Structure{
   "id":any;
+  "user":any;
   "name":any;
   "email":any;
   "password":any;

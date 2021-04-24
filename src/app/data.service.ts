@@ -1,12 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable,OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {Structure} from '../app/str';
+import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder, private http:HttpClient) { }
 
   data = this.fb.group({
     user: ['Fresher'],
@@ -59,6 +62,18 @@ export class DataService {
   {
     console.log(this.data.value);
     this.data.reset();
+  }
+
+  //get data
+
+  info():Observable<any>{
+    return this.http.get("http://localhost:5555/data");
+  }
+
+  ngOnInit()
+  {
+    this.data;
+
   }
 
 

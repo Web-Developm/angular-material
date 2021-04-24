@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { HttpResponse, HttpHeaders, HttpClient } from '@angular/common/http';
+import { Structure } from '../str';
 
 @Component({
   selector: 'app-data',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ds: DataService, private http: HttpClient) { }
+
+  public items!: Structure[];
+
+
+  sample = ["user", "id", "name", "email", "password", "cpassword", "blood", "salary", "age", "street"];
+
+  get() {
+    this.ds.info().subscribe(
+      data => {
+        this.items = data;
+        console.log(data);
+      }
+    )
+  }
 
   ngOnInit(): void {
+    this.get();
   }
 
 }

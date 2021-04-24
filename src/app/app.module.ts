@@ -28,6 +28,7 @@ import { UpdateComponent } from './update/update.component';
 import { DeleteComponent } from './delete/delete.component';
 
 import {Structure} from '../app/str';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -58,9 +59,10 @@ import {Structure} from '../app/str';
     MatMenuModule,
     MatTabsModule,
     MatTableModule,
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule
   ],
-  providers: [DataService],
+  providers: [DataService,Structure],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

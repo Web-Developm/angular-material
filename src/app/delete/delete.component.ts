@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpResponse, HttpHeaders, HttpClient } from '@angular/common/http';
+import {Structure} from '../str';
+import {DataService} from '../data.service';
 
 @Component({
   selector: 'app-delete',
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeleteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient, private ds:DataService) { }
 
   ngOnInit(): void {
   }
