@@ -1,19 +1,19 @@
-.example{
-  margin-left:10px;
+.container{
+  padding:20px 0px 20px 0px;
+  width:25%;
+  justify-content: center;
 }
 
 .mat-radio-button ~ .mat-radio-button {
   margin-left: 16px;
 }
+.row{
+  padding:5px 0px 5px 0px;
+}
 
 table{
   width:100%;
 }
-
-.example-spacer {
-  flex: 1 1 auto;
-}
-
 
 
 .example-card {
