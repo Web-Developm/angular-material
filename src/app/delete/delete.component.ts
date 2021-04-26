@@ -18,7 +18,7 @@ export class DeleteComponent implements OnInit {
 
   public temp = new MatTableDataSource(this.store);
 
-  sample = ["user", "id", "name", "email", "password", "cpassword", "blood", "salary", "age", "street", "delete"];
+  sample = ["id","user","name", "email", "password", "cpassword", "blood", "salary", "age", "street","delete"];
 
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -31,6 +31,16 @@ export class DeleteComponent implements OnInit {
         console.log(data);
       }
 
+    )
+  }
+
+  delete(index:any)
+  {
+    this.ds.delete(index).subscribe(
+      data=>{
+        console.log(data);
+        this.display();
+      }
     )
   }
 

@@ -11,8 +11,10 @@ export class DataService {
 
   constructor(private fb: FormBuilder, private http: HttpClient) { }
 
+  url = "http://localhost:5555/data";
+
   data = this.fb.group({
-    user: ['Fresher'],
+    user: ['',[Validators.required]],
     id: ['', [Validators.required]],
     name: ['', [Validators.required, Validators.pattern('[a-zA-Z]*')]],
     email: ['', [Validators.required, Validators.email]],
@@ -69,8 +71,17 @@ export class DataService {
     return this.http.get("http://localhost:5555/data");
   }
 
-  add(temp:Structure):Observable<any>{
-    return this.http.post("http://localhost:5555/data",temp);
+  add(temp: Structure): Observable<any> {
+    return this.http.post("http://localhost:5555/data", temp);
+  }
+
+  edit(primary: Structure, id: number): Observable<any> {
+    return this.http.put(`${this.url}/${id}`, primary);
+  }
+
+  delete(id:any):Observable<any>
+  {
+    return this.http.delete(`${this.url}/${id}`)
   }
 
   ngOnInit() {

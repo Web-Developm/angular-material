@@ -1,5 +1,6 @@
 .data{
   padding:20px 0px 20px 0px;
+  width:100%;
 }
 
 table{
@@ -8,12 +9,17 @@ table{
 
 
 .form{
-  padding:20px 0px 20px 0px;
-  width:25%;
+  padding:20px 0px 50px 0px;
 }
-.row{
-  padding: 5px 0px 5px 0px;
+
+.mat-radio-button{
+  padding:0px 0px 10px 0px;
 }
+
+.mat-form-field{
+  padding:0px 5px 0px 5px;
+}
+
 
 .mat-radio-button ~ .mat-radio-button {
   margin-left: 16px;

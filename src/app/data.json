@@ -92,8 +92,8 @@
       "password": "1234",
       "cpassword": "1234",
       "blood": "A+",
-      "salary": "10000",
       "age": "26",
+      "salary": "10000.0",
       "street": "Holmes"
     },
     {
@@ -128,8 +128,8 @@
       "password": "1234",
       "cpassword": "1234",
       "blood": "AB+",
+      "age": "25",
       "salary": "15067",
-      "age": "27",
       "street": "Holmes"
     },
     {
@@ -157,16 +157,16 @@
       "street": "London"
     },
     {
-      "id": "13",
       "user": "Fresher",
+      "id": "13",
       "name": "David",
       "email": "david@gmail.com",
-      "password": "123",
-      "cpassword": "123",
-      "blood": "A-",
+      "password": "1234",
+      "cpassword": "1234",
+      "blood": "B+",
+      "age": "24",
       "salary": "343434",
-      "age": "123",
-      "street": "wxfd"
+      "street": "London"
     }
   ]
 }

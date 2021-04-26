@@ -1,54 +1,60 @@
-<div class="container data">
+<div class="jumbotron">
   <table mat-table [dataSource]="store" class="mat-elevation-z8">
 
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef>Id</th>
-      <td mat-cell *matCellDef="let element">{{element.id}}</td>
+      <td mat-cell *matCellDef="let element; let i=index">{{element.id}}</td>
     </ng-container>
 
     <ng-container matColumnDef="user">
       <th mat-header-cell *matHeaderCellDef>User</th>
-      <td mat-cell *matCellDef="let element">{{element.user}}</td>
+      <td mat-cell *matCellDef="let element; let i=index">{{element.user}}</td>
     </ng-container>
 
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let element">{{element.name}}</td>
+      <td mat-cell *matCellDef="let element; let i=index">{{element.name}}</td>
     </ng-container>
 
     <ng-container matColumnDef="email">
       <th mat-header-cell *matHeaderCellDef>Email</th>
-      <td mat-cell *matCellDef="let element">{{element.email}}</td>
+      <td mat-cell *matCellDef="let element; let i=index">{{element.email}}</td>
     </ng-container>
 
     <ng-container matColumnDef="password">
       <th mat-header-cell *matHeaderCellDef>Password</th>
-      <td mat-cell *matCellDef="let element">{{element.password}}</td>
+      <td mat-cell *matCellDef="let element; let i=index">{{element.password}}</td>
     </ng-container>
 
     <ng-container matColumnDef="cpassword">
       <th mat-header-cell *matHeaderCellDef>Confirm Password</th>
-      <td mat-cell *matCellDef="let element">{{element.cpassword}}</td>
+      <td mat-cell *matCellDef="let element; let i=index">{{element.cpassword}}</td>
     </ng-container>
 
     <ng-container matColumnDef="blood">
       <th mat-header-cell *matHeaderCellDef>Blood</th>
-      <td mat-cell *matCellDef="let element">{{element.blood}}</td>
+      <td mat-cell *matCellDef="let element; let i=index">{{element.blood}}</td>
     </ng-container>
 
     <ng-container matColumnDef="salary">
       <th mat-header-cell *matHeaderCellDef>Salary</th>
-      <td mat-cell *matCellDef="let element">{{element.salary}}</td>
+      <td mat-cell *matCellDef="let element; let i=index">{{element.salary}}</td>
     </ng-container>
 
     <ng-container matColumnDef="age">
       <th mat-header-cell *matHeaderCellDef>Age</th>
-      <td mat-cell *matCellDef="let element">{{element.age}}</td>
+      <td mat-cell *matCellDef="let element; let i=index">{{element.age}}</td>
     </ng-container>
 
     <ng-container matColumnDef="street">
       <th mat-header-cell *matHeaderCellDef>Street</th>
-      <td mat-cell *matCellDef="let element">{{element.street}}</td>
+      <td mat-cell *matCellDef="let element; let i=index">{{element.street}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef>Edit</th>
+      <td mat-cell *matCellDef="let element;let i=index"><button mat-flat-button color="light"
+          (click)="update1(element,i)"><i class="far fa-edit"></i></button></td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="sample"></tr>
@@ -59,105 +65,82 @@
 
 
 <div class="container form">
+  <h1 class="mat-h1">Form</h1>
+
+
   <form [formGroup]="data">
 
-    <div class="row">
-      <div class="col">
-        <mat-radio-group aria-label="select on option" formControlName="user">
-          <mat-radio-button value="Fresher">Fresher</mat-radio-button>
-          <mat-radio-button value="Experience">Experience</mat-radio-button>
-          <br>
-        </mat-radio-group>
-      </div>
-    </div>
+    <mat-radio-group aria-label="select on option" formControlName="user">
+      <mat-radio-button value="Fresher">Fresher</mat-radio-button>
+      <mat-radio-button value="Experience">Experience</mat-radio-button>
+      <br>
+    </mat-radio-group>
 
-    <div class="row">
-      <div class="col">
-        <mat-form-field appearance="outline" class="example">
-          <mat-label>Id</mat-label>
-          <input matInput placeholder="id" formControlName="id">
-        </mat-form-field>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col">
-        <mat-form-field appearance="outline" class="example">
-          <mat-label>Name</mat-label>
-          <input matInput placeholder="name" formControlName="name">
-        </mat-form-field>
-      </div>
-    </div>
+    <mat-form-field appearance="outline" class="example">
+      <mat-label>Id</mat-label>
+      <input matInput placeholder="id" formControlName="id">
+    </mat-form-field>
 
-    <div class="row">
-      <div class="col">
-        <mat-form-field appearance="outline" class="example">
-          <mat-label>Email</mat-label>
-          <input matInput placeholder="email" formControlName="email">
-        </mat-form-field>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col">
-        <mat-form-field appearance="outline" class="example">
-          <mat-label>Password</mat-label>
-          <input matInput placeholder="password" autocomplete="on" formControlName="password">
-        </mat-form-field>
-      </div>
-    </div>
+    <mat-form-field appearance="outline" class="example">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="name" formControlName="name">
+    </mat-form-field>
 
-    <div class="row">
-      <div class="col">
-        <mat-form-field appearance="outline" class="example">
-          <mat-label>Confirm Password</mat-label>
-          <input matInput placeholder="cpassword" autocomplete="on" formControlName="cpassword">
-        </mat-form-field>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col">
-        <mat-form-field appearance="outline" class="example">
-          <mat-label>Select Blood Group</mat-label>
-          <mat-select formControlName="blood" required>
-            <mat-option *ngFor="let group1 of group" [value]="group1.blood">
-              {{group1.blood}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-    </div>
+    <mat-form-field appearance="outline" class="example">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="email" formControlName="email">
+    </mat-form-field>
 
-    <div class="row">
-      <div class="col">
-        <mat-form-field appearance="outline" class="example">
-          <mat-label>Salary</mat-label>
-          <input matInput placeholder="salary" formControlName="salary">
-        </mat-form-field>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col">
-        <mat-form-field appearance="outline" class="example">
-          <mat-label>Age</mat-label>
-          <input matInput placeholder="age" formControlName="age">
-        </mat-form-field>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col">
-        <mat-form-field appearance="outline" class="example">
-          <mat-label>Street</mat-label>
-          <input matInput placeholder="street" formControlName="street">
-        </mat-form-field>
-      </div>
-    </div>
+    <mat-form-field appearance="outline" class="example">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="password" autocomplete="on" formControlName="password">
+    </mat-form-field>
 
-    <div class="d-grid gap-2 d-md-block">
-      <button [disabled]="data.invalid" mat-flat-button color="primary" style="justify-content:center;">Submit</button>
+
+
+    <mat-form-field appearance="outline" class="example">
+      <mat-label>Confirm Password</mat-label>
+      <input matInput placeholder="cpassword" autocomplete="on" formControlName="cpassword">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="example">
+      <mat-label>Select Blood Group</mat-label>
+      <mat-select formControlName="blood">
+        <mat-option *ngFor="let group1 of group" [value]="group1.blood">
+          {{group1.blood}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="example">
+      <mat-label>Salary</mat-label>
+      <input matInput placeholder="salary" formControlName="salary">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="example">
+      <mat-label>Age</mat-label>
+      <input matInput placeholder="age" formControlName="age">
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="outline" class="example">
+      <mat-label>Street</mat-label>
+      <input matInput placeholder="street" formControlName="street">
+    </mat-form-field>
+
+
+    <div class="text-center">
+      <button (click)="update2()" [disabled]="data.invalid" mat-flat-button color="primary"
+        style="justify-content:center;">Update</button>
     </div>
 
   </form>
