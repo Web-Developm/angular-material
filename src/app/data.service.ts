@@ -69,6 +69,10 @@ export class DataService {
     return this.http.get("http://localhost:5555/data");
   }
 
+  add(temp:Structure):Observable<any>{
+    return this.http.post("http://localhost:5555/data",temp);
+  }
+
   ngOnInit() {
     this.data;
 

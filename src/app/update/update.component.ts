@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-update',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ds: DataService) {
+
+  }
+
+  public data:FormGroup=this.ds.data;
+
+  public group:any=this.ds.group;
+
 
   ngOnInit(): void {
   }

@@ -41,6 +41,29 @@ export class SampleComponent implements OnInit {
     return 0;
   }
 
+  add()
+  {
+    let temp=new Structure();
+
+    temp.id=this.data.controls['id'].value;
+    temp.user=this.data.controls['user'].value;
+    temp.name=this.data.controls['name'].value;
+    temp.email=this.data.controls['email'].value;
+    temp.password=this.data.controls['password'].value;
+    temp.cpassword=this.data.controls['cpassword'].value;
+    temp.blood=this.data.controls['blood'].value;
+    temp.salary=this.data.controls['salary'].value;
+    temp.age=this.data.controls['age'].value;
+    temp.street=this.data.controls['street'].value;
+
+    this.ds.add(temp).subscribe(
+      data=>{
+        console.log(data);
+        alert("Successfully added");
+      }
+    )
+  }
+
   display()
   {
     this.ds.display();

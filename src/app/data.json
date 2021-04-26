@@ -149,12 +149,24 @@
       "id": "12",
       "name": "Benjamin",
       "email": "benjamin@gmail.com",
-      "password":"1234",
-      "cpassword":"1234",
+      "password": "1234",
+      "cpassword": "1234",
       "blood": "B+",
       "salary": "5000",
       "age": "18",
       "street": "London"
+    },
+    {
+      "id": "13",
+      "user": "Fresher",
+      "name": "David",
+      "email": "david@gmail.com",
+      "password": "123",
+      "cpassword": "123",
+      "blood": "A-",
+      "salary": "343434",
+      "age": "123",
+      "street": "wxfd"
     }
   ]
 }
