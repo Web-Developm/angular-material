@@ -21,6 +21,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSortModule} from '@angular/material/sort';
 
 import {DataService} from '../app/data.service';
 import { DataComponent } from './data/data.component';
@@ -29,6 +30,7 @@ import { DeleteComponent } from './delete/delete.component';
 
 import {Structure} from '../app/str';
 import { HttpClientModule } from '@angular/common/http';
+import { FrontComponent } from './front/front.component';
 
 
 
@@ -38,7 +40,8 @@ import { HttpClientModule } from '@angular/common/http';
     SampleComponent,
     DataComponent,
     UpdateComponent,
-    DeleteComponent
+    DeleteComponent,
+    FrontComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatTabsModule,
     MatTableModule,
     MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSortModule
   ],
   providers: [DataService,Structure],
   bootstrap: [AppComponent]

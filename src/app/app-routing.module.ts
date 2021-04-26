@@ -4,6 +4,7 @@ import { DataComponent } from './data/data.component';
 import { DeleteComponent } from './delete/delete.component';
 import { SampleComponent } from './sample/sample.component';
 import { UpdateComponent } from './update/update.component';
+import {FrontComponent} from './/front/front.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
 
   {
     path:'delete', component:DeleteComponent
+  },
+
+  {
+    path:'home', component:FrontComponent
   }
 
 ];
@@ -29,4 +34,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const route=[SampleComponent,DataComponent,UpdateComponent,DeleteComponent];
+export const route=[SampleComponent,DataComponent,UpdateComponent,DeleteComponent,FrontComponent];

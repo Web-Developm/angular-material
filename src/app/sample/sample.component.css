@@ -4,6 +4,11 @@
   border: 2px dotted black;
 }
 
+.radio{
+  padding:5px 0px 0px 0px;
+  margin-left:4.5rem;
+}
+
 .mat-radio-button ~ .mat-radio-button {
   margin-left: 16px;
 }
