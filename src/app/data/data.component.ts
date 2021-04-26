@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { HttpResponse, HttpHeaders, HttpClient } from '@angular/common/http';
 import { Structure } from '../str';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-data',
@@ -15,7 +16,7 @@ export class DataComponent implements OnInit {
   public items!: Structure[];
 
 
-  sample = ["id","user","name", "email", "password", "cpassword", "blood", "salary", "age", "street"];
+  sample = ["id", "user", "name", "email", "password", "cpassword", "blood", "salary", "age", "street"];
 
   get() {
     this.ds.info().subscribe(
@@ -24,6 +25,11 @@ export class DataComponent implements OnInit {
         console.log(data);
       }
     )
+  }
+
+  filter(event: Event) {
+    const filterValue: any = (event.target as HTMLInputElement).value;
+    this.items.filter = filterValue.trim().toLowerCase();
   }
 
   ngOnInit(): void {
