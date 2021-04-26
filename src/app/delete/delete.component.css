@@ -1,0 +1,11 @@
+.container{
+  padding:20px 0px 20px 0px;
+}
+
+table{
+  width:100%;
+}
+
+th.mat-sort-header-sorted{
+  color:black;
+}

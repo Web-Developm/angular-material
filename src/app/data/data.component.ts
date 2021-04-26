@@ -15,7 +15,7 @@ export class DataComponent implements OnInit {
   public items!: Structure[];
 
 
-  sample = ["user", "id", "name", "email", "password", "cpassword", "blood", "salary", "age", "street"];
+  sample = ["id","user","name", "email", "password", "cpassword", "blood", "salary", "age", "street"];
 
   get() {
     this.ds.info().subscribe(

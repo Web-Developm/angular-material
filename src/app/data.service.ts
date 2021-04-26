@@ -1,6 +1,6 @@
-import { Injectable,OnInit } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import {Structure} from '../app/str';
+import { Structure } from '../app/str';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
-  constructor(private fb:FormBuilder, private http:HttpClient) { }
+  constructor(private fb: FormBuilder, private http: HttpClient) { }
 
   data = this.fb.group({
     user: ['Fresher'],
@@ -58,20 +58,18 @@ export class DataService {
     }
   ];
 
-  display()
-  {
+  display() {
     console.log(this.data.value);
     this.data.reset();
   }
 
   //get data
 
-  info():Observable<any>{
+  info(): Observable<any> {
     return this.http.get("http://localhost:5555/data");
   }
 
-  ngOnInit()
-  {
+  ngOnInit() {
     this.data;
 
   }
