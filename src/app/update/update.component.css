@@ -1,0 +1,22 @@
+.data{
+  padding:20px 0px 20px 0px;
+}
+
+table{
+  width:100%;
+}
+
+
+.form{
+  padding:20px 0px 20px 0px;
+  width:25%;
+}
+.row{
+  padding: 5px 0px 5px 0px;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+
+
