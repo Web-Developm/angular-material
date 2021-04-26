@@ -14,16 +14,16 @@ export class DataService {
   url = "http://localhost:5555/data";
 
   data = this.fb.group({
-    user: ['',[Validators.required]],
-    id: ['', [Validators.required]],
+    user: ['', [Validators.required]],
+    id: ['', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
     name: ['', [Validators.required, Validators.pattern('[a-zA-Z]*')]],
     email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
     cpassword: ['', Validators.required],
     blood: ['', [Validators.required]],
-    salary: ['', [Validators.required]],
-    age: ['', [Validators.required]],
-    street: ['', [Validators.required]]
+    salary: ['', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
+    age: ['', [Validators.required,Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
+    street: ['', [Validators.required,Validators.pattern('[a-zA-Z]*')]]
   })
 
   group = [
@@ -79,8 +79,7 @@ export class DataService {
     return this.http.put(`${this.url}/${id}`, primary);
   }
 
-  delete(id:any):Observable<any>
-  {
+  delete(id: any): Observable<any> {
     return this.http.delete(`${this.url}/${id}`)
   }
 

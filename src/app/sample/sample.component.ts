@@ -18,6 +18,15 @@ export class SampleComponent implements OnInit {
 
   public group:any=this.ds.group;
 
+  getid()
+  {
+    if(this.data.controls['id'].hasError('required')){
+      return 'Enter the id';
+    }
+
+    return this.data.controls['id'].hasError('pattern') ? 'Not a valid id': '';
+  }
+
   getErrorMessage() {
     if (this.data.controls['email'].hasError('required')) {
       return 'You must enter a value';
@@ -39,6 +48,16 @@ export class SampleComponent implements OnInit {
     }
 
     return 0;
+  }
+
+  getsalary()
+  {
+    if(this.data.controls['salary'].hasError('required'))
+    {
+      return 'salary required';
+    }
+
+    return this.data.controls['salary'].hasError('pattern')? 'Salary in number' : '';
   }
 
   add()

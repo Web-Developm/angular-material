@@ -31,6 +31,7 @@ import { DeleteComponent } from './delete/delete.component';
 import {Structure} from '../app/str';
 import { HttpClientModule } from '@angular/common/http';
 import { FrontComponent } from './front/front.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -64,7 +65,8 @@ import { FrontComponent } from './front/front.component';
     MatTableModule,
     MatToolbarModule,
     HttpClientModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule
   ],
   providers: [DataService,Structure],
   bootstrap: [AppComponent]
