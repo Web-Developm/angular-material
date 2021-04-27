@@ -1,20 +1,23 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { DataService } from '../data.service';
-import { HttpResponse, HttpHeaders, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Structure } from '../str';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-data',
   templateUrl: './data.component.html',
   styleUrls: ['./data.component.css']
 })
-export class DataComponent implements OnInit {
+export class DataComponent implements OnInit, AfterViewInit {
 
   constructor(private ds: DataService, private http: HttpClient) { }
 
-  public items!: Structure[];
+  items = new MatTableDataSource<Structure>();
+
+  @ViewChild(MatSort, { static: true }) sort!: MatSort;
 
 
   sample = ["id", "user", "name", "email", "password", "cpassword", "blood", "salary", "age", "street"];
@@ -30,9 +33,6 @@ export class DataComponent implements OnInit {
     )
   }
 
-  datasource = new MatTableDataSource<Structure>(this.items);
-
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   filter(event: Event) {
     const filterValue: any = (event.target as HTMLInputElement).value;
@@ -40,11 +40,16 @@ export class DataComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.get();
+    this.items.sort = this.sort;
+    this.ds.info().subscribe(
+      data => {
+        this.items.data = data;
+        console.log(data);
+      }
+    )
   }
 
   ngAfterViewInit() {
-    this.datasource.paginator = this.paginator;
   }
 
 }

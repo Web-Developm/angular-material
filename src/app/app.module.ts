@@ -24,6 +24,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { DataService } from '../app/data.service';
 import { DataComponent } from './data/data.component';
@@ -74,7 +75,8 @@ import { DialogComponent } from './dialog/dialog.component';
     MatSortModule,
     MatDialogModule,
     MatPaginatorModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatProgressSpinnerModule
   ],
   providers: [DataService, Structure],
   bootstrap: [AppComponent]
