@@ -11,13 +11,15 @@ import { MatSort } from '@angular/material/sort';
   templateUrl: './data.component.html',
   styleUrls: ['./data.component.css']
 })
-export class DataComponent implements OnInit, AfterViewInit {
+export class DataComponent implements OnInit{
 
   constructor(private ds: DataService, private http: HttpClient) { }
 
   items = new MatTableDataSource<Structure>();
 
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
+
+  @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
 
   sample = ["id", "user", "name", "email", "password", "cpassword", "blood", "salary", "age", "street"];
@@ -40,6 +42,7 @@ export class DataComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    this.items.paginator = this.paginator;
     this.items.sort = this.sort;
     this.ds.info().subscribe(
       data => {
@@ -47,9 +50,6 @@ export class DataComponent implements OnInit, AfterViewInit {
         console.log(data);
       }
     )
-  }
-
-  ngAfterViewInit() {
   }
 
 }
