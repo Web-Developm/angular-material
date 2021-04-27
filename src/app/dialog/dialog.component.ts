@@ -55,8 +55,7 @@ export class DialogComponent implements OnInit {
     window.location.reload();
   }
 
-  reset()
-  {
+  reset() {
     this.data.reset();
   }
 
