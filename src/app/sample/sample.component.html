@@ -16,7 +16,7 @@
 
       <mat-grid-tile>
 
-        <mat-form-field appearance="standard" class="example">
+        <mat-form-field appearance="outline" class="example">
           <mat-label>Id</mat-label>
           <input matInput placeholder="id" formControlName="id">
           <mat-error *ngIf="data.controls['id'].invalid">{{getid()}}</mat-error>
@@ -25,7 +25,7 @@
       </mat-grid-tile>
 
       <mat-grid-tile>
-        <mat-form-field appearance="standard" class="example">
+        <mat-form-field appearance="outline" class="example">
           <mat-label>Name</mat-label>
           <input matInput placeholder="name" formControlName="name">
           <mat-error *ngIf="data.controls['name'].invalid">{{getname()}}</mat-error>
@@ -33,7 +33,7 @@
       </mat-grid-tile>
 
       <mat-grid-tile>
-        <mat-form-field appearance="standard" class="example">
+        <mat-form-field appearance="outline" class="example">
           <mat-label>Email</mat-label>
           <input matInput placeholder="email" formControlName="email">
           <mat-error *ngIf="data.controls['email'].invalid">{{getErrorMessage()}}</mat-error>
@@ -41,7 +41,7 @@
       </mat-grid-tile>
 
       <mat-grid-tile>
-        <mat-form-field appearance="standard" class="example">
+        <mat-form-field appearance="outline" class="example">
           <mat-label>Password</mat-label>
           <input matInput placeholder="password" autocomplete="on" formControlName="password">
         </mat-form-field>
@@ -52,14 +52,14 @@
 
     <mat-grid-list cols="4" rowHeight="80px">
       <mat-grid-tile>
-        <mat-form-field appearance="standard" class="example">
+        <mat-form-field appearance="outline" class="example">
           <mat-label>Confirm Password</mat-label>
           <input matInput placeholder="cnfirm password" autocomplete="on" formControlName="cpassword">
         </mat-form-field>
       </mat-grid-tile>
 
       <mat-grid-tile>
-        <mat-form-field appearance="standard" class="example">
+        <mat-form-field appearance="outline" class="example">
           <mat-label>Select Blood Group</mat-label>
           <mat-select formControlName="blood">
             <mat-option *ngFor="let group1 of group" [value]="group1.blood">
@@ -71,7 +71,7 @@
       </mat-grid-tile>
 
       <mat-grid-tile>
-        <mat-form-field appearance="standard" class="example">
+        <mat-form-field appearance="outline" class="example">
           <mat-label>Salary</mat-label>
           <input matInput placeholder="salary" formControlName="salary">
           <mat-error *ngIf="data.controls['salary'].invalid">{{getsalary()}}</mat-error>
@@ -79,14 +79,14 @@
       </mat-grid-tile>
 
       <mat-grid-tile>
-        <mat-form-field appearance="standard" class="example">
+        <mat-form-field appearance="outline" class="example">
           <mat-label>Age</mat-label>
           <input matInput placeholder="age" formControlName="age">
         </mat-form-field>
       </mat-grid-tile>
 
       <mat-grid-tile>
-        <mat-form-field appearance="standard" class="example">
+        <mat-form-field appearance="outline" class="example">
           <mat-label>Street</mat-label>
           <input matInput placeholder="street" formControlName="street">
         </mat-form-field>
