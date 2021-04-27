@@ -77,6 +77,8 @@ export class SampleComponent implements OnInit {
         alert("Successfully added");
       }
     )
+
+    this.data.reset();
   }
 
   display() {

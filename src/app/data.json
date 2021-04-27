@@ -167,6 +167,18 @@
       "salary": "10000",
       "age": "24",
       "street": "London"
+    },
+    {
+      "id": "14",
+      "user": "Fresher",
+      "name": "Charles",
+      "email": "charles@gmail.com",
+      "password": "12345",
+      "cpassword": "12345",
+      "blood": "B+",
+      "salary": "10000",
+      "age": "26",
+      "street": "London"
     }
   ]
 }
