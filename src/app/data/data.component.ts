@@ -1,9 +1,9 @@
-import { Component, OnInit,AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { DataService } from '../data.service';
 import { HttpResponse, HttpHeaders, HttpClient } from '@angular/common/http';
 import { Structure } from '../str';
 import { MatTableDataSource } from '@angular/material/table';
-import {MatPaginator} from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-data',
@@ -30,9 +30,9 @@ export class DataComponent implements OnInit {
     )
   }
 
-  datasource=new MatTableDataSource<Structure>(this.items);
+  datasource = new MatTableDataSource<Structure>(this.items);
 
-  @ViewChild(MatPaginator) paginator!:MatPaginator;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   filter(event: Event) {
     const filterValue: any = (event.target as HTMLInputElement).value;
@@ -43,9 +43,8 @@ export class DataComponent implements OnInit {
     this.get();
   }
 
-  ngAfterViewInit()
-  {
-    this.datasource.paginator=this.paginator;
+  ngAfterViewInit() {
+    this.datasource.paginator = this.paginator;
   }
 
 }
