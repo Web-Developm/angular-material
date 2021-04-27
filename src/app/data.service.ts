@@ -22,8 +22,8 @@ export class DataService {
     cpassword: ['', Validators.required],
     blood: ['', [Validators.required]],
     salary: ['', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
-    age: ['', [Validators.required,Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
-    street: ['', [Validators.required,Validators.pattern('[a-zA-Z]*')]]
+    age: ['', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
+    street: ['', [Validators.required, Validators.pattern('[a-zA-Z]*')]]
   })
 
   group = [

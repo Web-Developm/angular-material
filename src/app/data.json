@@ -1,14 +1,14 @@
 {
   "data": [
     {
-      "user":"Experience",
+      "user": "Experience",
       "id": "0",
       "name": "KAYLING",
       "email": "kayling@gmail.com",
       "password": "12345",
       "cpassword": "12345",
       "blood": "O+",
-      "salary": "6000.00",
+      "salary": "6000",
       "age": "22",
       "street": "Holmes"
     },
@@ -17,8 +17,8 @@
       "id": "1",
       "name": "BLAZE ",
       "email": "blaze@gmail.com",
-      "password": "1234",
-      "cpassword": "1234",
+      "password": "12345",
+      "cpassword": "12345",
       "blood": "B+",
       "salary": "2750.00",
       "age": "25",
@@ -32,7 +32,7 @@
       "password": "1234",
       "cpassword": "1234",
       "blood": "AB+",
-      "salary": "900.00",
+      "salary": "10000",
       "age": "20",
       "street": "Holmes"
     },
@@ -44,7 +44,7 @@
       "password": "1234",
       "cpassword": "1234",
       "blood": "A-",
-      "salary": "1700.00 ",
+      "salary": "10000",
       "age": "19",
       "street": "Holmes"
     },
@@ -56,7 +56,7 @@
       "password": "1234",
       "cpassword": "1234",
       "blood": "B+",
-      "salary": "1350.00",
+      "salary": "10000",
       "age": "18",
       "street": "Holmes"
     },
@@ -68,7 +68,7 @@
       "password": "1234",
       "cpassword": "1234",
       "blood": "O-",
-      "salary": "1350.00",
+      "salary": "20000",
       "age": "19",
       "street": "Holmes"
     },
@@ -92,8 +92,8 @@
       "password": "1234",
       "cpassword": "1234",
       "blood": "A+",
+      "salary": "10000",
       "age": "26",
-      "salary": "10000.0",
       "street": "Holmes"
     },
     {
@@ -152,7 +152,7 @@
       "password": "1234",
       "cpassword": "1234",
       "blood": "B+",
-      "salary": "5000",
+      "salary": "10000",
       "age": "18",
       "street": "London"
     },
@@ -161,11 +161,11 @@
       "id": "13",
       "name": "David",
       "email": "david@gmail.com",
-      "password": "1234",
-      "cpassword": "1234",
+      "password": "12345",
+      "cpassword": "12345",
       "blood": "B+",
+      "salary": "10000",
       "age": "24",
-      "salary": "343434",
       "street": "London"
     }
   ]

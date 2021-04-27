@@ -53,6 +53,8 @@ export class DialogComponent implements OnInit {
         this.display();
       }
     )
+
+    window.location.reload();
   }
 
   ngOnInit(): void {

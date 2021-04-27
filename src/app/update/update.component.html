@@ -13,7 +13,7 @@
 
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let element; let i=index">{{element.name}}</td>
+      <td mat-cell *matCellDef="let element; let i=index">{{element.name | uppercase}}</td>
     </ng-container>
 
     <ng-container matColumnDef="email">
@@ -38,7 +38,7 @@
 
     <ng-container matColumnDef="salary">
       <th mat-header-cell *matHeaderCellDef>Salary</th>
-      <td mat-cell *matCellDef="let element; let i=index">{{element.salary}}</td>
+      <td mat-cell *matCellDef="let element; let i=index">{{element.salary | currency:'INR':'symbol'}}</td>
     </ng-container>
 
     <ng-container matColumnDef="age">
@@ -64,7 +64,7 @@
 </div>
 
 
-<div class="container form">
+<!--<div class="container form">
   <h1 class="mat-h1">Form</h1>
 
 
@@ -145,4 +145,4 @@
 
   </form>
 
-</div>
+</div>-->

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { DataService } from '../data.service';
 import { Structure } from '../str';
 import { MatDialog } from '@angular/material/dialog';
@@ -84,6 +84,11 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.display();
+
+  }
+
+  ngAfterViewInit(): void {
+
   }
 
 

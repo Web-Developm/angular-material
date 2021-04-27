@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { DataService } from '../data.service';
-import {Structure} from '../str';
+import { Structure } from '../str';
 
 @Component({
   selector: 'app-sample',
@@ -14,17 +14,16 @@ export class SampleComponent implements OnInit {
 
   hide = true;
 
-  public data:FormGroup=this.ds.data;
+  public data: FormGroup = this.ds.data;
 
-  public group:any=this.ds.group;
+  public group: any = this.ds.group;
 
-  getid()
-  {
-    if(this.data.controls['id'].hasError('required')){
+  getid() {
+    if (this.data.controls['id'].hasError('required')) {
       return 'Enter the id';
     }
 
-    return this.data.controls['id'].hasError('pattern') ? 'Not a valid id': '';
+    return this.data.controls['id'].hasError('pattern') ? 'Not a valid id' : '';
   }
 
   getErrorMessage() {
@@ -50,41 +49,37 @@ export class SampleComponent implements OnInit {
     return 0;
   }
 
-  getsalary()
-  {
-    if(this.data.controls['salary'].hasError('required'))
-    {
+  getsalary() {
+    if (this.data.controls['salary'].hasError('required')) {
       return 'salary required';
     }
 
-    return this.data.controls['salary'].hasError('pattern')? 'Salary in number' : '';
+    return this.data.controls['salary'].hasError('pattern') ? 'Salary in number' : '';
   }
 
-  add()
-  {
-    let temp=new Structure();
+  add() {
+    let temp = new Structure();
 
-    temp.id=this.data.controls['id'].value;
-    temp.user=this.data.controls['user'].value;
-    temp.name=this.data.controls['name'].value;
-    temp.email=this.data.controls['email'].value;
-    temp.password=this.data.controls['password'].value;
-    temp.cpassword=this.data.controls['cpassword'].value;
-    temp.blood=this.data.controls['blood'].value;
-    temp.salary=this.data.controls['salary'].value;
-    temp.age=this.data.controls['age'].value;
-    temp.street=this.data.controls['street'].value;
+    temp.id = this.data.controls['id'].value;
+    temp.user = this.data.controls['user'].value;
+    temp.name = this.data.controls['name'].value;
+    temp.email = this.data.controls['email'].value;
+    temp.password = this.data.controls['password'].value;
+    temp.cpassword = this.data.controls['cpassword'].value;
+    temp.blood = this.data.controls['blood'].value;
+    temp.salary = this.data.controls['salary'].value;
+    temp.age = this.data.controls['age'].value;
+    temp.street = this.data.controls['street'].value;
 
     this.ds.add(temp).subscribe(
-      data=>{
+      data => {
         console.log(data);
         alert("Successfully added");
       }
     )
   }
 
-  display()
-  {
+  display() {
     this.ds.display();
   }
 
