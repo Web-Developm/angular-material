@@ -2,8 +2,6 @@ import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { HttpResponse, HttpHeaders, HttpClient } from '@angular/common/http';
 import { Structure } from '../str';
 import { DataService } from '../data.service';
-import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-delete',
@@ -16,11 +14,8 @@ export class DeleteComponent implements OnInit {
 
   public store!: Structure[];
 
-  public temp = new MatTableDataSource(this.store);
-
   sample = ["id","user","name", "email", "password", "cpassword", "blood", "salary", "age", "street","delete"];
 
-  @ViewChild(MatSort) sort!: MatSort;
 
 
 
@@ -49,7 +44,7 @@ export class DeleteComponent implements OnInit {
   }
 
   ngAfterViewInit():void {
-    this.temp.sort=this.sort;
+
   }
 
 }

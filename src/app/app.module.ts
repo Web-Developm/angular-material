@@ -22,6 +22,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { DataService } from '../app/data.service';
 import { DataComponent } from './data/data.component';
@@ -34,7 +36,7 @@ import { FrontComponent } from './front/front.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './dialog/dialog.component';
 
-//import { Form } from '../app/update/form';
+
 
 
 
@@ -70,7 +72,9 @@ import { DialogComponent } from './dialog/dialog.component';
     MatToolbarModule,
     HttpClientModule,
     MatSortModule,
-    MatDialogModule
+    MatDialogModule,
+    MatPaginatorModule,
+    MatSidenavModule
   ],
   providers: [DataService, Structure],
   bootstrap: [AppComponent]

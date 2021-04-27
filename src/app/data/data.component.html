@@ -1,8 +1,4 @@
 <div class="jumbotron">
-  <mat-form-field class="filter">
-    <mat-label>Filter</mat-label>
-    <input matInput (keyup)="filter($event)" placeholder="" #input>
-  </mat-form-field>
 
   <table mat-table [dataSource]="items" class="mat-elevation-z8">
     <ng-container matColumnDef="id">
@@ -58,4 +54,5 @@
     <tr mat-header-row *matHeaderRowDef="sample"></tr>
     <tr mat-row *matRowDef="let row;columns:sample"></tr>
   </table>
+  <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons></mat-paginator>
 </div>
