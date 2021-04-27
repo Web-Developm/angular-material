@@ -49,10 +49,11 @@ export class DialogComponent implements OnInit {
       data => {
         alert("successfull updated");
         this.display();
+
       }
     )
 
-    window.location.reload();
+
   }
 
   reset() {
@@ -60,6 +61,7 @@ export class DialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.display();
   }
 
 }

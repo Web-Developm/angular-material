@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { DataService } from '../data.service';
 import { Structure } from '../str';
@@ -53,34 +53,6 @@ export class UpdateComponent implements OnInit {
       street: primary.street
     });
 
-
-
-  }
-
-  update2() {
-    let primary = new Structure();
-
-    primary.user = this.data.controls['user'].value;
-    primary.id = this.data.controls['id'].value;
-    primary.name = this.data.controls['name'].value;
-    primary.email = this.data.controls['email'].value;
-    primary.password = this.data.controls['password'].value;
-    primary.cpassword = this.data.controls['cpassword'].value;
-    primary.blood = this.data.controls['blood'].value;
-    primary.age = this.data.controls['age'].value;
-    primary.salary = this.data.controls['salary'].value;
-    primary.street = this.data.controls['street'].value;
-
-    let id = Number(primary.id);
-
-    this.ds.edit(primary, id).subscribe(
-      data => {
-        console.log("Successfully updated");
-        this.display();
-      }
-    )
-
-    this.data.reset();
   }
 
 
@@ -89,9 +61,7 @@ export class UpdateComponent implements OnInit {
 
   }
 
-  ngAfterViewInit(): void {
 
-  }
 
 
 }

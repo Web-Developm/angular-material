@@ -11,7 +11,7 @@ import { MatSort } from '@angular/material/sort';
   templateUrl: './data.component.html',
   styleUrls: ['./data.component.css']
 })
-export class DataComponent implements OnInit{
+export class DataComponent implements OnInit {
 
   constructor(private ds: DataService, private http: HttpClient) { }
 
