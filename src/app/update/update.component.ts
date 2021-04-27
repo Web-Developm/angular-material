@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormControl } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { DataService } from '../data.service';
 import { Structure } from '../str';
 import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-update',
@@ -15,8 +16,9 @@ export class UpdateComponent implements OnInit {
 
   }
 
-  openDialog() {
-    this.dialog.open(Form);
+  openDialog(primary:any, index:any):void {
+    this.dialog.open(DialogComponent);
+    this.update1(primary,index);
   }
 
   public data: FormGroup = this.ds.data;
@@ -49,7 +51,7 @@ export class UpdateComponent implements OnInit {
       salary: primary.salary,
       age: primary.age,
       street: primary.street
-    })
+    });
 
   }
 
@@ -89,11 +91,3 @@ export class UpdateComponent implements OnInit {
 
 
 
-@Component({
-  selector: 'form',
-  templateUrl: 'form.html',
-})
-
-export class Form {
-
-}

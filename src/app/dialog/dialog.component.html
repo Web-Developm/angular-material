@@ -1,0 +1,82 @@
+<h1 mat-dialog-title>Update</h1>
+<div mat-dialog-content>
+  <form [formGroup]="data">
+
+    <mat-radio-group aria-label="select on option" formControlName="user">
+      <mat-radio-button value="Fresher">Fresher</mat-radio-button>
+      <mat-radio-button value="Experience">Experience</mat-radio-button>
+      <br>
+    </mat-radio-group>
+
+
+    <mat-form-field appearance="outline" class="example">
+      <mat-label>Id</mat-label>
+      <input matInput placeholder="id" formControlName="id">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="example">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="name" formControlName="name">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="example">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="email" formControlName="email">
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="outline" class="example">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="password" autocomplete="on" formControlName="password">
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="outline" class="example">
+      <mat-label>Confirm Password</mat-label>
+      <input matInput placeholder="cpassword" autocomplete="on" formControlName="cpassword">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="example">
+      <mat-label>Select Blood Group</mat-label>
+      <mat-select formControlName="blood">
+        <mat-option *ngFor="let group1 of group" [value]="group1.blood">
+          {{group1.blood}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="example">
+      <mat-label>Salary</mat-label>
+      <input matInput placeholder="salary" formControlName="salary">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="example">
+      <mat-label>Age</mat-label>
+      <input matInput placeholder="age" formControlName="age">
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="outline" class="example">
+      <mat-label>Street</mat-label>
+      <input matInput placeholder="street" formControlName="street">
+    </mat-form-field>
+
+
+    <div class="text-center">
+      <button [disabled]="data.invalid" mat-flat-button color="primary"
+        style="justify-content:center;">Update</button>
+    </div>
+
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>

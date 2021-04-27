@@ -1,0 +1,19 @@
+mat-dialog-title{
+  padding-bottom: 20px;
+}
+
+form{
+  padding-top: 20px;
+}
+
+.mat-radio-button{
+  padding:0px 0px 10px 0px;
+}
+
+.mat-form-field{
+  padding:0px 5px 0px 5px;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
