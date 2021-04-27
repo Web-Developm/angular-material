@@ -16,9 +16,9 @@ export class UpdateComponent implements OnInit {
 
   }
 
-  openDialog(primary:any, index:any):void {
+  openDialog(primary: any, index: any) {
     this.dialog.open(DialogComponent);
-    this.update1(primary,index);
+    this.update1(primary, index);
   }
 
   public data: FormGroup = this.ds.data;

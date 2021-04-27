@@ -1,12 +1,12 @@
 {
   "data": [
     {
-      "user": "Fresher",
+      "user":"Experience",
       "id": "0",
       "name": "KAYLING",
       "email": "kayling@gmail.com",
-      "password": "1234",
-      "cpassword": "1234",
+      "password": "12345",
+      "cpassword": "12345",
       "blood": "O+",
       "salary": "6000.00",
       "age": "22",
