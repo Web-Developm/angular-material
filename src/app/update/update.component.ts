@@ -1,23 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnChanges, SimpleChanges } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { DataService } from '../data.service';
 import { Structure } from '../str';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 
+
 @Component({
   selector: 'app-update',
   templateUrl: './update.component.html',
   styleUrls: ['./update.component.css']
 })
-export class UpdateComponent implements OnInit {
+export class UpdateComponent implements OnInit, AfterViewInit {
 
   constructor(private ds: DataService, public dialog: MatDialog) {
 
   }
 
   openDialog(primary: any, index: any) {
-    this.dialog.open(DialogComponent);
+    this.dialog.open(DialogComponent).afterClosed().subscribe(
+      store => console.log(store)
+    )
     this.update1(primary, index);
   }
 
@@ -58,7 +61,12 @@ export class UpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.display();
+  }
 
+
+
+  ngAfterViewInit(): void {
+    this.display();
   }
 
 

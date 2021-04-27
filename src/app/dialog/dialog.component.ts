@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { DataService } from '../data.service';
 import { Structure } from '../str';
 
@@ -11,7 +12,7 @@ import { Structure } from '../str';
 })
 export class DialogComponent implements OnInit {
 
-  constructor(private ds: DataService) { }
+  constructor(private ds: DataService, public dialog: MatDialogRef<DialogComponent>) { }
 
   public data = this.ds.data;
 
@@ -48,8 +49,6 @@ export class DialogComponent implements OnInit {
     this.ds.edit(primary, id).subscribe(
       data => {
         alert("successfull updated");
-        this.display();
-
       }
     )
 
@@ -57,7 +56,10 @@ export class DialogComponent implements OnInit {
   }
 
   reset() {
-    this.data.reset();
+
+    this.dialog.close(this.store);
+    //this.data.reset();
+
   }
 
   ngOnInit(): void {
