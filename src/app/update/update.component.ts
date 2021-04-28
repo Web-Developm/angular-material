@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { DataService } from '../data.service';
 import { Structure } from '../str';
@@ -11,7 +11,7 @@ import { DialogComponent } from '../dialog/dialog.component';
   templateUrl: './update.component.html',
   styleUrls: ['./update.component.css']
 })
-export class UpdateComponent implements OnInit, AfterViewInit {
+export class UpdateComponent implements OnInit, AfterContentInit {
 
   constructor(private ds: DataService, public dialog: MatDialog) {
 
@@ -21,6 +21,7 @@ export class UpdateComponent implements OnInit, AfterViewInit {
     this.dialog.open(DialogComponent, { height: '500px', width: '1000px' }).afterClosed().subscribe(
       store => console.log(store)
     );
+
     this.update1(primary, index);
   }
 
@@ -63,14 +64,9 @@ export class UpdateComponent implements OnInit, AfterViewInit {
     this.display();
   }
 
-
-
-  ngAfterViewInit(): void {
+  ngAfterContentInit(): void {
     this.display();
   }
-
-
-
 
 }
 
