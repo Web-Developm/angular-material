@@ -58,7 +58,8 @@ export class DialogComponent implements OnInit {
   reset() {
 
     this.dialog.close(this.store);
-    //this.data.reset();
+    this.data.reset();
+    this.display();
 
   }
 

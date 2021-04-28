@@ -18,9 +18,9 @@ export class UpdateComponent implements OnInit, AfterViewInit {
   }
 
   openDialog(primary: any, index: any) {
-    this.dialog.open(DialogComponent).afterClosed().subscribe(
+    this.dialog.open(DialogComponent, { height: '500px', width: '1000px' }).afterClosed().subscribe(
       store => console.log(store)
-    )
+    );
     this.update1(primary, index);
   }
 
